@@ -1,0 +1,11 @@
+{
+  "Bot Settings": {
+    "Temp Role Output": false,
+
+    "Presence Automation": true,
+    "Presence Logging": false
+  },
+  "Gemini Automod": {
+    "Enabled": true
+  }
+}
