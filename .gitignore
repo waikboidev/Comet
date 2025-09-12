@@ -1,0 +1,10 @@
+# Ignore everything
+*
+!/node_modules
+
+# But not these files...
+!/dist/
+!.gitignore
+!/package.json
+!/package-lock.json
+!/tsconfig.json
