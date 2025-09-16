@@ -39,7 +39,7 @@ module.exports = {
       }
 
       try {
-        await member.setNickname(nickname, `This action was fulfilled by ${moderator}`);
+        await member.setNickname(nickname, `This action was fulfilled by ${moderator.username}`);
         await interaction.reply(`<a:green:1412830885874630779> Updated **${user.username}**'s nickname from **${oldNickname}** to **${nickname}**.`);
       } catch (error) {
         console.error(error);
@@ -47,7 +47,7 @@ module.exports = {
       }
     } else {
       try {
-        await member.setNickname(null, `This action was fulfilled by ${moderator}`);
+        await member.setNickname(null, `This action was fulfilled by ${moderator.username}`);
         await interaction.reply(`<a:green:1412830885874630779> **${user.username}**'s nickname was reset.`);
       } catch (error) {
         console.error(error);
