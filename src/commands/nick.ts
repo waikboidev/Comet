@@ -29,7 +29,7 @@ module.exports = {
       return;
     }
 
-    const oldNickname = member.nickname || user.username;
+    const oldNickname = member.nickname || user.displayName;
 
     if (nickname) {
       if (oldNickname === nickname) {
