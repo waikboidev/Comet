@@ -20,6 +20,7 @@ module.exports = {
   async execute(interaction: CommandInteraction) {
     if (!interaction.isChatInputCommand()) return;
 
+    const moderator = interaction.user;
     const user = interaction.options.getUser("user", true);
     const nickname = interaction.options.getString("nickname");
     const member = await interaction.guild!.members.fetch(user.id);
@@ -38,7 +39,7 @@ module.exports = {
       }
 
       try {
-        await member.setNickname(nickname);
+        await member.setNickname(nickname, `This action was fulfilled by ${moderator}`);
         await interaction.reply(`<a:green:1412830885874630779> Updated **${user.username}**'s nickname from **${oldNickname}** to **${nickname}**.`);
       } catch (error) {
         console.error(error);
@@ -46,7 +47,7 @@ module.exports = {
       }
     } else {
       try {
-        await member.setNickname(null);
+        await member.setNickname(null, `This action was fulfilled by ${moderator}`);
         await interaction.reply(`<a:green:1412830885874630779> **${user.username}**'s nickname was reset.`);
       } catch (error) {
         console.error(error);
